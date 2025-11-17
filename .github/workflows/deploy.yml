@@ -29,6 +29,8 @@ jobs:
           # Copy additional static entrypoints not handled by Vite's index.html
           cp game.html dist/game.html || echo 'game.html missing'
           cp mobile.html dist/mobile.html || echo 'mobile.html missing'
+          # Ensure raw asset images referenced by HTML backgrounds are present
+          cp -R assets dist/assets || echo 'assets directory missing'
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
