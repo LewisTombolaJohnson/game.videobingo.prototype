@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>80s Universe Bingo - Game</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+      html,body { margin:0; width:100%; height:100%; font-family:'Press Start 2P', monospace; color:#fff; }
+      body { background: radial-gradient(circle at 50% 30%, #210042, #05010d 70%); overflow:hidden; }
+    #app { position:absolute; top:0; left:0; bottom:0; right:76px; } /* ultra narrow calls panel */
+  .calls-panel { position:absolute; top:0; right:0; width:76px; bottom:0; padding:3px 2px 2px 2px; box-sizing:border-box; display:flex; flex-direction:column; gap:3px; background:rgba(0,0,0,0.35); backdrop-filter:blur(3px); border-left:1px solid rgba(255,255,255,0.25); }
+  .calls-header { font-size:8px; letter-spacing:0.5px; text-align:center; }
+  .overlay-ui { position:absolute; top:4px; left:4px; display:flex; gap:4px; z-index:10; }
+  button { cursor:pointer; background:linear-gradient(135deg,#ff00e6,#ff8c00); border:1px solid #fff; color:#fff; padding:4px 6px; font-family:'Press Start 2P', monospace; font-size:10px; text-shadow:0 0 4px #ff00e6; box-shadow:0 0 6px #ff00e6; }
+      button:hover { filter:brightness(1.15); }
+      button:active { transform:translateY(2px); }
+      .icon-btn { display:flex; align-items:center; gap:6px; }
+  /* Alternating 3 / 2 column rows layout for 40 calls */
+  .calls-grid { flex:1 1 auto; display:grid; grid-template-columns:repeat(2, 1fr); grid-auto-rows:15px; gap:2px; overflow-y:auto; padding-right:2px; }
+  .call-cell { display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.35); font-size:9px; line-height:1; border-radius:2px; box-shadow:0 0 2px #ff00e6 inset; height:15px; }
+      .call-cell.hit { background:#06f; box-shadow:0 0 8px #0ff, 0 0 12px #06f inset; }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div class="overlay-ui">
+      <button id="regen" class="icon-btn" title="Regenerate Tickets" aria-label="Regenerate Tickets">♻ Recycle</button>
+      <button id="buyin" aria-label="Buy In">Buy In</button>
+    </div>
+    <div class="calls-panel">
+  <div class="calls-header" id="callsHeader">CALLS 0/40</div>
+      <div id="calls" class="calls-grid"></div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

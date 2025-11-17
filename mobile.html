@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>80s Universe Bingo - Mobile Host</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+      html,body { margin:0; width:100%; height:100%; }
+  body { font-family:'Press Start 2P', monospace; background:#000; position:relative; display:flex; align-items:center; justify-content:center; overflow:auto; }
+  /* Fixed viewport mimic for mobile testing (pixel-exact) */
+  .mobile-frame { width:377px; height:669px; position:relative; box-shadow:0 0 24px #ff00e6,0 0 48px rgba(255,0,230,0.4); border:2px solid #fff; background:#000 url('assets/gig-mobile.png') center center / cover no-repeat; display:flex; align-items:flex-end; justify-content:center; }
+  /* Aspect-ratio only (original size) */
+  iframe { width:100%; aspect-ratio:526 / 402; height:auto; border:0; display:block; box-shadow:0 0 12px #ff00e6; margin:0 0 95px 0; }
+      /* Center bottom positioning achieved by flex on body and bottom alignment inside mobile-frame */
+      .note { position:absolute; top:8px; left:50%; transform:translateX(-50%); font-size:11px; letter-spacing:1px; color:#fff; text-shadow:0 0 6px #ff00e6; }
+    </style>
+  </head>
+  <body>
+    <div class="mobile-frame">
+  <div class="note">Mobile Preview 377x669</div>
+      <iframe src="game.html" title="Bingo Game (Mobile Preview)" loading="eager"></iframe>
+    </div>
+  </body>
+</html>
