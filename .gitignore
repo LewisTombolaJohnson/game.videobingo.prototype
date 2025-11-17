@@ -1,0 +1,24 @@
+# Node / TypeScript / Vite standard ignores
+node_modules/
+dist/
+.DS_Store
+*.log
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE/editor
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Output / coverage
+coverage/
+.nyc_output/
+
+# Misc
+*.tgz
+*.zip
+*.tmp
+*.cache
