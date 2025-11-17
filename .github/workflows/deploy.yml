@@ -24,10 +24,7 @@ jobs:
       - name: Install deps
         run: npm ci
       - name: Build
-        run: |
-          npm run build
-          # Copy assets (until migrated to /public) for backgrounds
-          cp -R assets dist/assets || echo 'assets directory missing'
+        run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

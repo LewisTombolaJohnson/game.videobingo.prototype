@@ -16,4 +16,5 @@ export default defineConfig({
       }
     }
   }
+  // Static assets moved to public/assets (copied unchanged to dist) so workflow copy is optional.
 });
