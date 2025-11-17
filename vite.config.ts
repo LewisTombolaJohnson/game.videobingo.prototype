@@ -6,4 +6,14 @@ export default defineConfig({
   server: {
     port: 5173,
   },
+  build: {
+    rollupOptions: {
+      // Ensure Vite processes all HTML entry points so <script type="module" src="/src/main.ts"> is rewritten
+      input: {
+        index: 'index.html',
+        game: 'game.html',
+        mobile: 'mobile.html'
+      }
+    }
+  }
 });
